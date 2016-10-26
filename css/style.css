@@ -17,22 +17,24 @@ footer {
 	margin: 0 auto;
 	background-color: rgba(21, 25, 29, 0.6);
 	text-align: center;
-	padding: 3px;
-	height: 50px;
 }
 
 .footer-container a {
-	margin-left: 10px
+	margin-left: 10px;
+	text-align: center;
+	transition: all .2s linear;
+}
+
+.footer-container a:hover {
+	border-bottom: 5px solid #004d40;
 }
 
 .icon {
 	position: relative;	
-	transition: all .2s ease-in-out;
+	padding: 3px;
 }
 	
-.icon:hover {
-	transform: scale(1.2);
-}
+
 
 .wrapper {
 	width: 100%;
