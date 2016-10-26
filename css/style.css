@@ -13,19 +13,21 @@ footer {
 }
 
 .footer-container {
-	display: inline-block;
+	display: inline-flex;
 	margin: 0 auto;
 	background-color: rgba(21, 25, 29, 0.6);
 	text-align: center;
 }
 
-.footer-container a {
-	margin-left: 10px;
+.footer-container div {
+	margin: 2px 5px 0 5px;
 	text-align: center;
 	transition: all .2s linear;
+	border-bottom: 5px solid transparent;
 }
 
-.footer-container a:hover {
+.footer-container div:hover {
+	transform: scale(1.1);
 	border-bottom: 5px solid #004d40;
 }
 
