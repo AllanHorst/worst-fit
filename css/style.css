@@ -1,6 +1,10 @@
 html, body{
 	position: relative;
 	height: 100vh;
+	background: url('../footage/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
 }
 footer {
 	position: relative;
@@ -9,15 +13,12 @@ footer {
 }
 
 .footer-container {
-	width: 65%;
+	display: inline-block;
 	margin: 0 auto;
-	background-color: #1565c0;
-	position: absolute;
-	bottom: 0;
-	left: 15%;
-	dislpay: flex;
+	background-color: rgba(21, 25, 29, 0.6);
 	text-align: center;
 	padding: 3px;
+	height: 50px;
 }
 
 .footer-container a {
@@ -25,10 +26,17 @@ footer {
 }
 
 .icon {
-	width: 60px;
+	position: relative;	
+	transition: all .2s ease-in-out;
+}
+	
+.icon:hover {
+	transform: scale(1.2);
 }
 
-.icon:hover {
-	width: 80px;
-	transition: all 5s easy-in;
+.wrapper {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 7px;
 }

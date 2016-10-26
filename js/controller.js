@@ -19,7 +19,7 @@ angular.module('worstFitApp', [])
 			id: 2
 		}, 
 		{
-			size: 10,
+			size: 10,		
 			icon: "footage/excel-icon.png",
 			name: "Excel", 
 			id: 3
