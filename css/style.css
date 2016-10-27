@@ -52,11 +52,26 @@ footer {
 .window-area {
 	width: 70vw;
 	height: 80vh;
+	border: 1px !important;
+	left: 15%;
+    top: 5%;
 }
 
 .window {
 	width: 100%;
 	height: 100%;
-	background-color: #eeeeee !important;
-	border: 3px solid #795548;
+	background-color: #fff !important;
+	border: 4px solid #8c695c;
+} 	
+
+.window-header {
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	background-color: #8c695c;
+}
+
+.window-buttons {
+	margin-left: 5px;
+	float: left;
 }

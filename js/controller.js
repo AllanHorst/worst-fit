@@ -2,7 +2,7 @@ angular.module('worstFitApp', [])
 
 .controller('appController',  function($scope) {
 	$scope.click = function(item) {
-		alert(item.name)
+		// alert(item.name)
 	}
 
 	$scope.programs = [
