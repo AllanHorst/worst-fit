@@ -5,6 +5,7 @@ html, body{
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+	overflow: hidden;
 }
 footer {
 	position: relative;
@@ -17,6 +18,8 @@ footer {
 	margin: 0 auto;
 	background-color: rgba(21, 25, 29, 0.6);
 	text-align: center;
+	border-radius: 2px;
+	box-shadow: 0 6px 5px rgba(0,0,0,0.6);
 }
 
 .footer-container div {
@@ -36,11 +39,24 @@ footer {
 	padding: 3px;
 }
 	
-
-
 .wrapper {
 	width: 100%;
 	text-align: center;
 	position: absolute;
 	bottom: 7px;
+}
+
+.desktop {
+}
+
+.window-area {
+	width: 70vw;
+	height: 80vh;
+}
+
+.window {
+	width: 100%;
+	height: 100%;
+	background-color: #eeeeee !important;
+	border: 3px solid #795548;
 }

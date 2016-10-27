@@ -54,6 +54,15 @@ angular.module('worstFitApp', [])
 			name: "Adobe Photoshop", 
 			id: 8
 		}
-	]
+	];
+
+
+	$( function() {
+		$( "#window" ).draggable();
+	} );
+
+	$( function() {
+		$( "#window" ).resizable();
+	} );
 
 })

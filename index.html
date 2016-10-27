@@ -3,9 +3,11 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/materialize.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
 
 	<script src="js/angular-1.5.6/angular.js"></script>
 	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui/jquery-ui.min.js"></script>
 	<script src="js/controller.js"></script>
 	<script src="js/materialize.js"></script>
 
@@ -14,16 +16,23 @@
 </head>
 <body ng-controller="appController" >
 
-	<div class="content">
-		<div class="apps col s12 teal lighten-4">
-			
+	<!-- <div id="desktop" class="ui-widget-content"> -->
+		<div class="window-area ui-widget-content" id="window">
+			<div class="window">
+				<div class="window-header">
+					
+				</div>
+				<div class="window-content">
+					
+				</div>
+			</div>
 		</div>
-	</div>
+	<!-- </div> -->
 
 	<div class="wrapper">
 		<div class="footer-container">
 			<div style="cursor: pointer" ng-click="click(item)" ng-repeat="item in programs track by $index" >
-				<img class="icon" title="{{item.name}}" src="{{item.icon}}" width="50px" height="50px">
+				<img class="icon" title="{{item.name}}" src="{{item.icon}}" width="45px" height="45px">
 			</div>
 		</div>
 	</div>
