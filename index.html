@@ -32,7 +32,8 @@
 					<div class="memory">
 						<div ng-repeat="item in memory1.list" class="item"
 							style="width: {{item.size}}%" 
-							ng-class="item.type == 'USED' ? 'used-memory' : 'free-memory'">
+							title="{{item.id}}"
+							ng-class="item.status == 'USED' ? 'used-memory' : 'free-memory'">
 							{{item.id}}
 						</div>
 					</div>
@@ -43,7 +44,7 @@
 						<div ng-repeat="item in memory2.list" class="item"
 							style="width: {{item.size}}%" 
 							title="{{item.id}}" 
-							ng-class="item.type == 'USED' ? 'used-memory' : 'free-memory'">
+							ng-class="item.status == 'USED' ? 'used-memory' : 'free-memory'">
 							{{item.id}}
 						</div>
 					</div>

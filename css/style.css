@@ -116,6 +116,7 @@ footer {
 	border: 1px solid;
 	margin-left: 5%;
 	display: inline-flex;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 .item {
 	height: 100%;
@@ -128,9 +129,9 @@ footer {
 }
 
 .free-memory {
-	background: #28c101;
+	background: #4CAF50 ;
 }
 
 .used-memory {
-	background: #cc0000;
+	background: #B71C1C	;
 }

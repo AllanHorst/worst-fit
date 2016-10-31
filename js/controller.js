@@ -2,26 +2,71 @@ angular.module('worstFitApp', [])
 
 .controller('appController',  function($scope) {
 	$scope.click = function(item) {
-		alert(item.name)
+		findSpace(item.size, $scope.memory1);
+		findSpace(item.size, $scope.memory2);
+
+		if ($scope.larggerSpace.size == 0) {
+			alert('Out of memory')
+			return;
+		} 
+
+		malloc(item, $scope.larggerSpace)
+
+	}
+
+	function findSpace(size, memory) {
+
+		if ($scope.larggerSpace == undefined) {
+			$scope.larggerSpace = {
+				size: 0
+			}
+		}
+
+		for(var i = 0; i < memory.list.length; i++) {
+			var item = memory.list[i];
+
+			if (item.status == 'USED') {
+				continue;
+			}
+
+			if (item.size >= size && $scope.larggerSpace.size < item.size) {
+				$scope.larggerSpace = item;
+				$scope.larggerSpace.memoryName = memory.name
+			}
+		}
+	}
+
+	function malloc(item) {
+		var memoryName = $scope.larggerSpace.memoryName;
+		
+		for(var i = 0; i < $scope[memoryName].list.length; i++) {
+			
+			var space = $scope[memoryName].list[i];
+			if (space.id == $scope.larggerSpace.id) {
+				space.status = 'USED';
+				space.process = item;
+				break;
+			}
+		}
+		$scope.larggerSpace = undefined
 	}
 
 	$scope.memory1 = {
 		list: [],
+		name: 'memory1',
 		freeSpace: 100,
 		full: false
 	}
 
 	$scope.memory2 = {
 		list: [],
+		name: 'memory2',
 		freeSpace: 100,
 		full: false
 	}
 
 	initialize($scope.memory1);
 	initialize($scope.memory2);
-
-	console.log($scope.memory1);
-	console.log($scope.memory2);
 
 	function initialize(memory) {
 		var max = 20;
@@ -30,12 +75,11 @@ angular.module('worstFitApp', [])
 		var i = 1;
 		
 		while(!memory.full) {
-			let type = parseInt(getRandomNumber(0, 2))	;
+			let status = parseInt(getRandomNumber(0, 2))	;
 
 			let obj = {
 				size: parseInt(getRandomNumber(min, max)),
-				type: type == 1 ? 'USED' : 'FREE',
-				description: type == 1 ? 'Process ' + i : 'Free space',
+				status: status == 1 ? 'USED' : 'FREE',
 				id: Number(parseInt(getRandomNumber(1000, 1000000))).toString(16)
 			}
 
@@ -54,6 +98,7 @@ angular.module('worstFitApp', [])
 			i++;
 		}
 	}
+
 
 	function getRandomNumber(min, max) {
 		return Math.random() * (max - min) + min;
@@ -96,7 +141,7 @@ angular.module('worstFitApp', [])
 			id: 6
 		},
 		{
-			size: 5, 
+			size: 8, 
 			icon: "footage/premiere-icon.png",
 			name: "Adobe Premiere", 
 			id: 7
