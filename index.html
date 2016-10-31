@@ -20,12 +20,34 @@
 		<div class="window">
 			<div class="window-header">
 				<div class="window-buttons">
-					x D -
+					<div class="window-button" id="close"></div>
+					<div class="window-button" id="minimize"></div>
+					<div class="window-button" id="maxmize"></div>
 				</div>
-				<span>Allahu akbar</span>
+				<span>Memory manager</span>
 			</div>
 			<div class="window-content">
-				
+				<div class="memory-wrapper">
+					<span class="memory-name">Memory 1</span>
+					<div class="memory">
+						<div ng-repeat="item in memory1.list" class="item"
+							style="width: {{item.size}}%" 
+							ng-class="item.type == 'USED' ? 'used-memory' : 'free-memory'">
+							{{item.id}}
+						</div>
+					</div>
+				</div>
+				<div class="memory-wrapper">
+					<span class="memory-name">Memory 2</span>
+					<div class="memory">
+						<div ng-repeat="item in memory2.list" class="item"
+							style="width: {{item.size}}%" 
+							title="{{item.id}}" 
+							ng-class="item.type == 'USED' ? 'used-memory' : 'free-memory'">
+							{{item.id}}
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
