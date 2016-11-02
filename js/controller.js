@@ -22,7 +22,7 @@ angular.module('worstFitApp', [])
 			}
 		}
 
-		for(var i = 0; i < memory.list.length; i++) {
+		for (var i = 0; i < memory.list.length; i++) {
 			var item = memory.list[i];
 
 			if (item.status == 'USED') {
@@ -75,11 +75,9 @@ angular.module('worstFitApp', [])
 		var i = 1;
 		
 		while(!memory.full) {
-			let status = parseInt(getRandomNumber(0, 2))	;
-
 			let obj = {
 				size: parseInt(getRandomNumber(min, max)),
-				status: status == 1 ? 'USED' : 'FREE',
+				status: 'FREE',
 				id: Number(parseInt(getRandomNumber(1000, 1000000))).toString(16)
 			}
 
