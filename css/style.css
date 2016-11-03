@@ -52,11 +52,11 @@ footer {
 }
 
 .window-area {
-	width: 96vw;
-	height: 88vh;
+	width: 98vw;
+	height: 89vh;
 	border: 1px !important;
-	left: 2%;
-    top: 2%;
+	left: 1%;
+    top: 1%;
 }
 
 .window {
