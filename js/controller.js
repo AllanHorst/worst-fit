@@ -43,8 +43,21 @@ angular.module('worstFitApp', [])
 			
 			var space = $scope[memoryName].list[i];
 			if (space.id == $scope.larggerSpace.id) {
+				var diff = space.size - item.size;
 				space.status = 'USED';
 				space.process = item;
+				space.size = item.size;
+
+				if (diff > 0) {
+					let obj = {
+						size: diff,
+						status: 'FREE',
+						id: Number(parseInt(getRandomNumber(1000, 1000000))).toString(16)
+					}
+					$scope[memoryName].list.splice(i+1, 0, obj);
+				}
+
+
 				break;
 			}
 		}
@@ -103,55 +116,62 @@ angular.module('worstFitApp', [])
 	}
 	$scope.programs = [
 		{
-			size: 20,
+			size: 15,
 			icon: "footage/chrome-icon.png",
 			name: "Google Chrome",
 			id: 1
 		}, 
 		{
-			size: 16,
+			size: 13,
 			icon: "footage/ie-icon.png", 
 			name: "Internet Explorer", 
 			id: 2
 		}, 
 		{
-			size: 10,		
+			size: 5,		
 			icon: "footage/excel-icon.png",
 			name: "Excel", 
 			id: 3
 		},
 		{
-			size: 9, 
+			size: 6, 
 			icon: "footage/word-icon.png",
 			name: "Word", 
 			id: 4
 		},
 		{
-			size: 7, 
+			size: 4, 
 			icon: "footage/msn-icon.png",
 			name: "MSN", 
 			id: 5
 		},
 		{
-			size: 11, 
+			size: 10, 
 			icon: "footage/spotify-icon.png",
 			name: "Spotify", 
 			id: 6
 		},
 		{
-			size: 8, 
+			size: 13, 
 			icon: "footage/premiere-icon.png",
 			name: "Adobe Premiere", 
 			id: 7
 		},
 		{
-			size: 18, 
+			size: 14, 
 			icon: "footage/ps-icon.png",
 			name: "Adobe Photoshop", 
 			id: 8
 		}
 	];
 
+	$scope.mouseEnter = function(id) {
+		$('#' + id).addClass('line-hover');
+	}
+
+	$scope.mouseLeave = function(id) {
+		$('#' + id).removeClass('line-hover');
+	}
 
 	$( function() {
 		$( "#window" ).draggable();

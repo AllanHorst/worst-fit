@@ -33,6 +33,9 @@
 						<div ng-repeat="item in memory1.list" class="item"
 							style="width: {{item.size}}%" 
 							title="{{item.id}}"
+							class="memory1"
+							ng-mouseenter="mouseEnter(item.id)"
+							ng-mouseleave="mouseLeave(item.id)"
 							ng-class="item.status == 'USED' ? 'used-memory' : 'free-memory'">
 							{{item.id}}
 						</div>
@@ -44,11 +47,60 @@
 						<div ng-repeat="item in memory2.list" class="item"
 							style="width: {{item.size}}%" 
 							title="{{item.id}}" 
+							ng-mouseenter="mouseEnter(item.id)"
+							ng-mouseleave="mouseLeave(item.id)"
 							ng-class="item.status == 'USED' ? 'used-memory' : 'free-memory'">
 							{{item.id}}
 						</div>
 					</div>
 				</div>
+				
+				<div class="line"> </div>
+				<div class="row">
+					<div class="col s6">
+						<table class="striped">
+							<thead>
+								<tr>
+									<th data-field="id">Address</th>
+									<th data-field="name">Size</th>
+									<th data-field="price">Process</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in memory1.list" id="{{item.id}}" class="grid-line">
+									<td>{{item.id}}</td>
+									<td>{{item.size}}MB</td>
+									<td>
+										<img ng-if="item.process != null" src="{{item.process.icon}}" width="25px" height="25px">
+										{{item.process.name}}
+									</td>
+								</tr>
+							</tbody>	
+						</table>
+					</div>
+					<div class="col s6">
+						<table class="striped">
+							<thead>
+								<tr>
+									<th data-field="id">Address</th>
+									<th data-field="name">Size</th>
+									<th data-field="price">Process</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in memory2.list" id="{{item.id}}" class="grid-line">
+									<td>{{item.id}}</td>
+									<td>{{item.size}}MB</td>
+									<td>
+										<img ng-if="item.process != null" src="{{item.process.icon}}" width="25px" height="25px">
+										<span>{{item.process.name}}</span>
+									</td>
+								</tr>
+							</tbody>	
+						</table>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>

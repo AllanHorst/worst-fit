@@ -52,11 +52,11 @@ footer {
 }
 
 .window-area {
-	width: 70vw;
-	height: 80vh;
+	width: 96vw;
+	height: 88vh;
 	border: 1px !important;
-	left: 15%;
-    top: 5%;
+	left: 2%;
+    top: 2%;
 }
 
 .window {
@@ -130,4 +130,22 @@ footer {
 
 .used-memory {
 	background: #B71C1C	;
+}
+
+.line {
+	margin-top: 20px;
+	margin-left: 2%;
+	width: 96%;
+	height: 1px;
+	background: rgba(0,0,0,0.2);
+}
+
+.grid-line {
+	transition: background-color 0.2s ease;
+	line-height: 8px !important;
+}
+
+.line-hover {
+	background-color: rgba(0,0,0,0.2) !important;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
