@@ -88,9 +88,17 @@ angular.module('worstFitApp', [])
 		var i = 1;
 		
 		while(!memory.full) {
+			var process = {}
+			var status = parseInt(getRandomNumber(0, 5)) == 0 ? 'USED' : 'FREE';
+			if (status == 'USED') {
+				process = {
+					name: 'Operational system'
+				}
+			}
 			let obj = {
 				size: parseInt(getRandomNumber(min, max)),
-				status: 'FREE',
+				status: status,
+				process: process,
 				id: Number(parseInt(getRandomNumber(1000, 1000000))).toString(16)
 			}
 
@@ -116,7 +124,7 @@ angular.module('worstFitApp', [])
 	}
 	$scope.programs = [
 		{
-			size: 15,
+			size: 10,
 			icon: "footage/chrome-icon.png",
 			name: "Google Chrome",
 			id: 1
